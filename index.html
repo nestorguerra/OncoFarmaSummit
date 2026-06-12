@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#e7f6ff">
+<title>OncoFarma Summit · Málaga 2026</title>
+<meta name="description" content="Agenda, ponentes y guía del Encuentro de Farmacéuticos Oncológicos. Bayer · Hotel Catalonia Molina Lario, Málaga · 12–13 junio 2026.">
+
+<!-- PWA -->
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="icon" href="./favicon.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="OncoFarma">
+<meta name="application-name" content="OncoFarma Summit">
+<style>
+  /* ============================================================
+     OncoFarma Summit 2026 — Liquid Glass
+     Paleta: lavado azul-menta + blobs Bayer (cian/azul/verde/teal)
+     Tinta: navy Bayer · Cristal: blanco translúcido · Tipo: SF Pro
+     ============================================================ */
+
+  :root{
+    --ink:#082338;
+    --ink-2:#274e6b;
+    --ink-3:#5b7e97;
+    --blue:#0091df;     /* Bayer bright blue */
+    --cyan:#16bdf2;
+    --green:#3fb918;    /* Bayer green */
+    --teal:#00cbb6;
+
+    --glass:rgba(255,255,255,.52);
+    --glass-2:rgba(255,255,255,.66);
+    --glass-3:rgba(255,255,255,.80);
+    --hair:rgba(255,255,255,.62);
+    --hair-soft:rgba(255,255,255,.40);
+    --edge:inset 0 1px 0 rgba(255,255,255,.85);
+
+    --shadow-sm:0 4px 18px rgba(8,35,56,.10);
+    --shadow:0 12px 36px rgba(8,35,56,.14);
+    --shadow-lg:0 22px 60px rgba(8,35,56,.20);
+
+    --r-xl:30px;
+    --r-lg:24px;
+    --r-md:18px;
+    --r-sm:13px;
+
+    --maxw:520px;
+    --blur:24px;
+
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","SF Pro Icons",system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    color:var(--ink);
+    background:#e7f6ff;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    line-height:1.45;
+    overflow-x:hidden;
+  }
+  button{font:inherit;color:inherit;border:none;background:none;cursor:pointer}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- Fondo: malla de cristal líquido ---------- */
+  .bg{position:fixed;inset:0;z-index:-2;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 80% 0%, #e4f8ff 0%, transparent 55%),
+      radial-gradient(120% 90% at 0% 100%, #e6fff1 0%, transparent 55%),
+      linear-gradient(165deg,#e9f6ff 0%,#eafff6 50%,#e8f4ff 100%);
+  }
+  .blob{position:absolute;border-radius:50%;filter:blur(58px);opacity:.78;will-change:transform}
+  .b1{width:62vmin;height:62vmin;left:-14vmin;top:-10vmin;background:radial-gradient(circle at 30% 30%,#5fd3ff,#0091df);animation:f1 26s ease-in-out infinite alternate}
+  .b2{width:54vmin;height:54vmin;right:-12vmin;top:4vmin;background:radial-gradient(circle at 60% 40%,#7af0e2,#00cbb6);animation:f2 30s ease-in-out infinite alternate}
+  .b3{width:58vmin;height:58vmin;left:-8vmin;bottom:-16vmin;background:radial-gradient(circle at 40% 60%,#9af56a,#3fb918);animation:f3 34s ease-in-out infinite alternate}
+  .b4{width:46vmin;height:46vmin;right:-10vmin;bottom:-6vmin;background:radial-gradient(circle at 50% 50%,#86c8ff,#3aa0ff);animation:f4 28s ease-in-out infinite alternate}
+  .b5{width:38vmin;height:38vmin;left:38%;top:34%;background:radial-gradient(circle at 50% 50%,#b9a8ff,#7c8cff);opacity:.42;animation:f5 38s ease-in-out infinite alternate}
+  .grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");}
+
+  @keyframes f1{from{transform:translate(0,0) scale(1)}to{transform:translate(8vmin,6vmin) scale(1.12)}}
+  @keyframes f2{from{transform:translate(0,0) scale(1)}to{transform:translate(-7vmin,8vmin) scale(1.08)}}
+  @keyframes f3{from{transform:translate(0,0) scale(1)}to{transform:translate(6vmin,-7vmin) scale(1.14)}}
+  @keyframes f4{from{transform:translate(0,0) scale(1)}to{transform:translate(-8vmin,-5vmin) scale(1.1)}}
+  @keyframes f5{from{transform:translate(-50%,-50%) scale(1)}to{transform:translate(-42%,-58%) scale(1.2)}}
+
+  /* ---------- Shell ---------- */
+  .app{max-width:var(--maxw);margin:0 auto;min-height:100%;position:relative}
+
+  /* Topbar */
+  .topbar{position:sticky;top:0;z-index:60;
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:calc(env(safe-area-inset-top,0px) + 11px) 18px 11px;
+    background:rgba(255,255,255,.34);
+    backdrop-filter:blur(18px) saturate(170%);-webkit-backdrop-filter:blur(18px) saturate(170%);
+    border-bottom:1px solid var(--hair-soft);
+  }
+  .brand{display:flex;align-items:center;gap:9px}
+  .bayer{width:25px;height:25px;flex:none;color:var(--blue)}
+  .brand .wk{font-size:14.5px;font-weight:700;letter-spacing:-.2px;line-height:1}
+  .brand .wk b{font-weight:800;background:linear-gradient(95deg,#0091df,#00cbb6 55%,#3fb918);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .brand .wk span{font-weight:600;color:var(--ink-3);letter-spacing:.5px}
+  .clock{display:flex;align-items:center;gap:7px;padding:6px 11px 6px 9px;border-radius:999px;
+    background:var(--glass-2);border:1px solid var(--hair);box-shadow:var(--edge);}
+  .clock .dot{width:8px;height:8px;border-radius:50%;background:var(--ink-3);box-shadow:0 0 0 0 rgba(63,185,24,.5)}
+  .clock.is-live .dot{background:#1fbf2e;animation:pulse 2s ease-out infinite}
+  .clock .t{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.2px}
+  .clock .d{font-size:10.5px;font-weight:600;color:var(--ink-3);text-transform:capitalize;margin-top:-2px}
+  .clock .col{display:flex;flex-direction:column;line-height:1.05}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(31,191,46,.55)}70%{box-shadow:0 0 0 9px rgba(31,191,46,0)}100%{box-shadow:0 0 0 0 rgba(31,191,46,0)}}
+
+  /* Views */
+  main{padding:0 16px 132px}
+  .view{display:none}
+  .view.active{display:block;animation:viewIn .42s cubic-bezier(.22,.61,.36,1) both}
+  @keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:26px 4px 6px;text-align:center}
+  .hero .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-3)}
+  .hero h1{margin-top:8px;font-size:46px;line-height:.92;font-weight:800;letter-spacing:-1.6px;
+    background:linear-gradient(120deg,#0091df 0%,#00cbb6 48%,#3fb918 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .sub{display:block;font-size:20px;font-weight:600;letter-spacing:5px;color:var(--ink-2);margin-top:4px;padding-left:5px}
+  .hero .meta{margin-top:13px;font-size:14px;font-weight:600;color:var(--ink-2)}
+  .venue-chip{display:inline-flex;align-items:center;gap:7px;margin-top:11px;padding:8px 14px;border-radius:999px;
+    background:var(--glass-2);border:1px solid var(--hair);box-shadow:var(--shadow-sm),var(--edge);font-size:13px;font-weight:600;color:var(--ink-2)}
+  .venue-chip svg{width:15px;height:15px;color:var(--blue)}
+
+  /* ---------- Banner contextual (firma) ---------- */
+  .nowbar{margin:18px 2px 8px;padding:16px 18px;border-radius:var(--r-lg);position:relative;overflow:hidden;
+    background:var(--glass);backdrop-filter:blur(var(--blur)) saturate(180%);-webkit-backdrop-filter:blur(var(--blur)) saturate(180%);
+    border:1px solid var(--hair);box-shadow:var(--shadow),var(--edge)}
+  .nowbar.live{background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(208,255,222,.55));border-color:rgba(63,185,24,.45);
+    box-shadow:0 16px 44px rgba(31,150,40,.22),var(--edge)}
+  .nowbar .tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase;color:var(--ink-3)}
+  .nowbar.live .tag{color:#178a23}
+  .nowbar .tag i{width:9px;height:9px;border-radius:50%;background:var(--ink-3)}
+  .nowbar.live .tag i{background:#1fbf2e;animation:pulse 2s ease-out infinite}
+  .nowbar .ttl{margin-top:9px;font-size:18px;font-weight:700;letter-spacing:-.3px;line-height:1.22}
+  .nowbar .when{margin-top:5px;font-size:13.5px;font-weight:600;color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .nowbar .when b{color:var(--blue);font-weight:800}
+  .progress{margin-top:13px;height:7px;border-radius:99px;background:rgba(8,35,56,.10);overflow:hidden}
+  .progress>i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#00cbb6,#3fb918);transition:width 1s linear}
+
+  /* ---------- Segmented control (días) ---------- */
+  .seg{display:flex;gap:5px;margin:18px 2px 16px;padding:5px;border-radius:999px;
+    background:var(--glass);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);
+    border:1px solid var(--hair-soft);box-shadow:var(--shadow-sm),var(--edge)}
+  .seg button{flex:1;padding:10px 8px;border-radius:999px;font-size:14px;font-weight:700;letter-spacing:-.1px;color:var(--ink-3);
+    display:flex;flex-direction:column;align-items:center;gap:1px;transition:.25s}
+  .seg button .sm{font-size:10.5px;font-weight:600;letter-spacing:.3px;opacity:.8}
+  .seg button.on{background:var(--glass-3);color:var(--blue);box-shadow:var(--shadow-sm),var(--edge)}
+  .seg button.on .sm{color:var(--ink-2);opacity:1}
+
+  /* ---------- Timeline ---------- */
+  .day-head{display:flex;align-items:baseline;justify-content:space-between;margin:4px 6px 12px}
+  .day-head h2{font-size:15px;font-weight:800;letter-spacing:-.2px;text-transform:capitalize}
+  .day-head span{font-size:12px;font-weight:600;color:var(--ink-3)}
+
+  .tl{position:relative;padding-left:60px}
+  .tl::before{content:"";position:absolute;left:51px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(var(--cyan),var(--teal),var(--green));opacity:.35;border-radius:2px}
+
+  .ses{position:relative;margin-bottom:13px;padding:15px 16px;border-radius:var(--r-lg);
+    background:var(--glass);backdrop-filter:blur(var(--blur)) saturate(175%);-webkit-backdrop-filter:blur(var(--blur)) saturate(175%);
+    border:1px solid var(--hair);box-shadow:var(--shadow-sm),var(--edge);transition:transform .15s ease, box-shadow .2s ease}
+  .ses:active{transform:scale(.985)}
+  .ses .time{position:absolute;left:-60px;top:16px;width:48px;text-align:right;
+    font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.3px;color:var(--ink-2)}
+  .ses .time .end{display:block;font-size:11px;font-weight:600;color:var(--ink-3);margin-top:1px}
+  .ses .node{position:absolute;left:-13px;top:20px;width:13px;height:13px;border-radius:50%;
+    background:#fff;border:3px solid var(--cyan);box-shadow:0 2px 7px rgba(8,35,56,.18);z-index:2}
+  .ses .kind{font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+  .ses h3{font-size:16px;font-weight:700;letter-spacing:-.3px;line-height:1.26}
+  .ses .who{margin-top:9px;display:flex;flex-direction:column;gap:6px}
+  .ses .who .p{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:var(--ink-2)}
+  .ses .who .p .av{width:23px;height:23px;border-radius:50%;flex:none;display:grid;place-items:center;
+    font-size:9.5px;font-weight:800;color:#fff;letter-spacing:.2px;box-shadow:0 2px 6px rgba(8,35,56,.18)}
+  .ses .who .p b{font-weight:700;color:var(--ink)}
+  .ses .who .p em{font-style:normal;color:var(--ink-3)}
+
+  /* estados */
+  .ses[data-kind="break"],.ses[data-kind="meal"]{padding:12px 16px;background:rgba(255,255,255,.34)}
+  .ses[data-kind="break"] h3,.ses[data-kind="meal"] h3{font-size:14px;font-weight:700;color:var(--ink-2)}
+  .ses[data-kind="break"] .node,.ses[data-kind="meal"] .node{border-color:var(--green)}
+  .ses[data-kind="social"] .node{border-color:#7c8cff}
+  .ses[data-kind="social"] .kind{color:#6a6df0}
+
+  .ses.past{opacity:.5}
+  .ses.past .node{border-color:var(--ink-3);background:var(--ink-3)}
+  .ses.next{box-shadow:0 12px 30px rgba(0,145,223,.20),var(--edge);border-color:rgba(0,145,223,.4)}
+  .ses.next .node{border-color:var(--blue);box-shadow:0 0 0 5px rgba(0,145,223,.18)}
+
+  .ses.live{background:linear-gradient(135deg,rgba(255,255,255,.66),rgba(206,255,221,.58));
+    border-color:rgba(63,185,24,.5);box-shadow:0 18px 46px rgba(31,160,40,.26),var(--edge);transform:scale(1.012)}
+  .ses.live .node{border-color:#1fbf2e;background:#1fbf2e;box-shadow:0 0 0 6px rgba(31,191,46,.2);animation:pulse 2s ease-out infinite}
+  .ses .badge{display:none;align-items:center;gap:6px;margin-bottom:7px;width:max-content;
+    padding:4px 10px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase}
+  .ses.live .badge{display:inline-flex;background:rgba(31,191,46,.16);color:#178a23}
+  .ses.live .badge i{width:7px;height:7px;border-radius:50%;background:#1fbf2e;animation:pulse 2s ease-out infinite}
+  .ses.next .badge{display:inline-flex;background:rgba(0,145,223,.14);color:#0072b0}
+  .ses .miniprog{display:none;margin-top:11px;height:6px;border-radius:99px;background:rgba(8,35,56,.10);overflow:hidden}
+  .ses.live .miniprog{display:block}
+  .ses .miniprog>i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#00cbb6,#3fb918);transition:width 1s linear}
+
+  /* ---------- Section headers (otras vistas) ---------- */
+  .vhead{padding:28px 6px 4px}
+  .vhead .eyebrow{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--ink-3)}
+  .vhead h2{margin-top:6px;font-size:30px;font-weight:800;letter-spacing:-1px;
+    background:linear-gradient(115deg,#0091df,#00cbb6 60%,#3fb918);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .vhead p{margin-top:7px;font-size:13.5px;font-weight:500;color:var(--ink-2);max-width:42ch}
+
+  /* ---------- Ponentes ---------- */
+  .speakers{margin-top:18px;display:flex;flex-direction:column;gap:11px}
+  .spk{display:flex;gap:13px;align-items:flex-start;padding:14px 15px;border-radius:var(--r-lg);
+    background:var(--glass);backdrop-filter:blur(var(--blur)) saturate(175%);-webkit-backdrop-filter:blur(var(--blur)) saturate(175%);
+    border:1px solid var(--hair);box-shadow:var(--shadow-sm),var(--edge)}
+  .spk .av{width:50px;height:50px;border-radius:50%;flex:none;display:grid;place-items:center;
+    font-size:17px;font-weight:800;color:#fff;letter-spacing:.3px;box-shadow:0 5px 14px rgba(8,35,56,.22),inset 0 1px 0 rgba(255,255,255,.4)}
+  .spk .info{flex:1;min-width:0}
+  .spk .nm{font-size:16px;font-weight:700;letter-spacing:-.3px}
+  .spk .ro{font-size:12.5px;font-weight:600;color:var(--blue);margin-top:1px}
+  .spk .or{font-size:12px;color:var(--ink-3);margin-top:2px;line-height:1.35}
+  .spk .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+  .spk .tags span{font-size:10.5px;font-weight:600;color:var(--ink-2);padding:3px 9px;border-radius:999px;
+    background:rgba(255,255,255,.55);border:1px solid var(--hair-soft)}
+
+  /* ---------- Sede ---------- */
+  .card{border-radius:var(--r-lg);background:var(--glass);
+    backdrop-filter:blur(var(--blur)) saturate(175%);-webkit-backdrop-filter:blur(var(--blur)) saturate(175%);
+    border:1px solid var(--hair);box-shadow:var(--shadow-sm),var(--edge);overflow:hidden}
+  .venue{margin-top:18px}
+  .venue .pad{padding:18px}
+  .venue h3{font-size:21px;font-weight:800;letter-spacing:-.5px}
+  .venue .addr{margin-top:5px;font-size:13.5px;font-weight:600;color:var(--ink-2);display:flex;gap:7px;align-items:flex-start}
+  .venue .addr svg{width:16px;height:16px;color:var(--blue);flex:none;margin-top:1px}
+  .mapwrap{position:relative;height:200px;background:#dfeefc}
+  .mapwrap iframe{width:100%;height:100%;border:0;display:block;filter:saturate(1.05)}
+  .maptint{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px var(--hair),inset 0 12px 24px -16px rgba(8,35,56,.4)}
+  .gobtns{display:flex;gap:9px;padding:14px 16px}
+  .gobtn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:var(--r-md);
+    font-size:13.5px;font-weight:700;letter-spacing:-.2px;background:var(--glass-3);border:1px solid var(--hair);box-shadow:var(--edge);color:var(--ink);transition:transform .15s}
+  .gobtn:active{transform:scale(.97)}
+  .gobtn.primary{background:linear-gradient(120deg,#0091df,#00b6cf);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(0,145,223,.32)}
+  .gobtn svg{width:16px;height:16px}
+
+  .feat{margin-top:13px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .feat .f{padding:14px;border-radius:var(--r-md);background:var(--glass);border:1px solid var(--hair);box-shadow:var(--shadow-sm),var(--edge)}
+  .feat .f svg{width:21px;height:21px;color:var(--teal)}
+  .feat .f .ft{margin-top:8px;font-size:13.5px;font-weight:700;letter-spacing:-.2px}
+  .feat .f .fd{margin-top:2px;font-size:11.5px;color:var(--ink-3);line-height:1.35}
+
+  /* ---------- Práctico ---------- */
+  .info-list{margin-top:18px;display:flex;flex-direction:column;gap:11px}
+  .irow{display:flex;gap:14px;padding:15px 16px;border-radius:var(--r-lg);align-items:flex-start;
+    background:var(--glass);backdrop-filter:blur(var(--blur)) saturate(175%);-webkit-backdrop-filter:blur(var(--blur)) saturate(175%);
+    border:1px solid var(--hair);box-shadow:var(--shadow-sm),var(--edge)}
+  .irow .ic{width:42px;height:42px;border-radius:13px;flex:none;display:grid;place-items:center;color:#fff;
+    box-shadow:0 5px 13px rgba(8,35,56,.2),inset 0 1px 0 rgba(255,255,255,.4)}
+  .irow .ic svg{width:21px;height:21px}
+  .irow .it{flex:1}
+  .irow .it h4{font-size:14.5px;font-weight:700;letter-spacing:-.2px}
+  .irow .it p{margin-top:3px;font-size:12.5px;color:var(--ink-2);line-height:1.45}
+  .irow .it p b{font-weight:700;color:var(--ink)}
+  .key-times{margin-top:9px;display:flex;flex-direction:column;gap:7px}
+  .key-times .kt{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:12.5px}
+  .key-times .kt span{color:var(--ink-2);font-weight:600}
+  .key-times .kt b{font-weight:800;color:var(--blue);font-variant-numeric:tabular-nums}
+
+  .footer{margin:26px 6px 0;text-align:center;color:var(--ink-3)}
+  .footer .org{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;
+    background:var(--glass-2);border:1px solid var(--hair);box-shadow:var(--edge);font-size:12.5px;font-weight:600;color:var(--ink-2)}
+  .footer .org .bayer{width:21px;height:21px;color:var(--blue)}
+  .footer small{display:block;margin-top:12px;font-size:11px;opacity:.8}
+
+  /* ---------- Tab bar ---------- */
+  .tabbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 14px);
+    z-index:70;width:min(92%,460px);display:flex;gap:4px;padding:7px;border-radius:26px;
+    background:rgba(255,255,255,.52);backdrop-filter:blur(26px) saturate(190%);-webkit-backdrop-filter:blur(26px) saturate(190%);
+    border:1px solid var(--hair);box-shadow:var(--shadow-lg),var(--edge)}
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 4px 7px;border-radius:19px;
+    color:var(--ink-3);transition:.22s}
+  .tab svg{width:23px;height:23px;stroke-width:1.9}
+  .tab span{font-size:10.5px;font-weight:700;letter-spacing:-.1px}
+  .tab.on{color:var(--blue);background:var(--glass-3);box-shadow:var(--shadow-sm),var(--edge)}
+
+  @media (max-width:380px){
+    .hero h1{font-size:40px}
+    .tl{padding-left:54px}
+    .tl::before{left:45px}
+    .ses .time{left:-54px;width:44px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .blob{animation:none}
+    .view.active{animation:none}
+    .clock.is-live .dot,.nowbar.live .tag i,.ses.live .node,.ses.live .badge i{animation:none}
+  }
+</style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+    <div class="blob b4"></div><div class="blob b5"></div>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="app">
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="brand">
+        <svg class="bayer" viewBox="0 0 100 100" aria-label="Bayer">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="4.5" opacity=".75"/>
+          <g font-family="-apple-system,Helvetica,Arial,sans-serif" font-weight="800" font-size="17" fill="currentColor" text-anchor="middle">
+            <text x="50" y="22" dominant-baseline="central">B</text>
+            <text x="50" y="36" dominant-baseline="central">A</text>
+            <text x="50" y="50" dominant-baseline="central">Y</text>
+            <text x="50" y="64" dominant-baseline="central">E</text>
+            <text x="50" y="78" dominant-baseline="central">R</text>
+            <text x="22" y="50" dominant-baseline="central">B</text>
+            <text x="36" y="50" dominant-baseline="central">A</text>
+            <text x="64" y="50" dominant-baseline="central">E</text>
+            <text x="78" y="50" dominant-baseline="central">R</text>
+          </g>
+        </svg>
+        <div class="wk"><b>OncoFarma</b> <span>SUMMIT</span></div>
+      </div>
+      <div class="clock" id="clock">
+        <span class="dot"></span>
+        <div class="col"><span class="t" id="clockT">--:--</span><span class="d" id="clockD">—</span></div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ============ AGENDA ============ -->
+      <section class="view active" id="view-agenda">
+        <div class="hero">
+          <div class="eyebrow">Encuentro de Farmacéuticos Oncológicos</div>
+          <h1>OncoFarma</h1>
+          <span class="sub">SUMMIT</span>
+          <div class="meta">12 – 13 junio 2026 · Málaga</div>
+          <div class="venue-chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Hotel Catalonia Molina Lario
+          </div>
+        </div>
+
+        <div class="nowbar" id="nowbar">
+          <div class="tag"><i></i><span id="nowTag">Cargando…</span></div>
+          <div class="ttl" id="nowTitle"></div>
+          <div class="when" id="nowWhen"></div>
+          <div class="progress" id="nowProgWrap" style="display:none"><i id="nowProg" style="width:0%"></i></div>
+        </div>
+
+        <div class="seg" id="seg" role="tablist">
+          <button data-day="1" role="tab"><span>Viernes</span><span class="sm">12 jun</span></button>
+          <button data-day="2" role="tab"><span>Sábado</span><span class="sm">13 jun</span></button>
+        </div>
+
+        <div class="day-head"><h2 id="dayTitle">Viernes 12</h2><span id="dayCount"></span></div>
+        <div class="tl" id="timeline"></div>
+      </section>
+
+      <!-- ============ PONENTES ============ -->
+      <section class="view" id="view-ponentes">
+        <div class="vhead">
+          <div class="eyebrow">Quién habla</div>
+          <h2>Ponentes</h2>
+          <p>Farmacéuticos hospitalarios, oncólogos y expertos que conducen las sesiones del Summit.</p>
+        </div>
+        <div class="speakers" id="speakers"></div>
+      </section>
+
+      <!-- ============ SEDE ============ -->
+      <section class="view" id="view-sede">
+        <div class="vhead">
+          <div class="eyebrow">Dónde</div>
+          <h2>La sede</h2>
+          <p>En pleno centro histórico de Málaga, a un paso de la Catedral y de Calle Larios.</p>
+        </div>
+
+        <div class="card venue">
+          <div class="pad">
+            <h3>Hotel Catalonia Molina Lario</h3>
+            <div class="addr">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <span>Calle Molina Lario, 20 · Distrito Centro · 29015 Málaga</span>
+            </div>
+          </div>
+          <div class="mapwrap">
+            <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Hotel Catalonia Molina Lario"
+              src="https://www.google.com/maps?q=Calle+Molina+Lario+20,+29015+M%C3%A1laga&z=16&output=embed"></iframe>
+            <div class="maptint"></div>
+          </div>
+          <div class="gobtns">
+            <a class="gobtn primary" href="https://maps.apple.com/?q=Hotel%20Catalonia%20Molina%20Lario&ll=36.71862,-4.41960" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Cómo llegar</a>
+            <a class="gobtn" href="https://www.google.com/maps/search/?api=1&query=Hotel%20Catalonia%20Molina%20Lario%20M%C3%A1laga" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 20l-5.5 2.5v-15L9 5m0 15l6-2.5M9 20V5m6 12.5L20.5 20v-15L15 7.5m0 10V7.5m0 0L9 5"/></svg>Google Maps</a>
+          </div>
+        </div>
+
+        <div class="feat">
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg>
+            <div class="ft">Catedral a 1 min</div><div class="fd">Centro histórico, andando a todo</div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="6" width="18" height="11" rx="2"/><path d="M7 17v2M17 17v2M3 11h18"/></svg>
+            <div class="ft">Parking privado</div><div class="fd">En el edificio, según disponibilidad</div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 13a10 10 0 0114 0M8.5 16.5a5 5 0 017 0M12 20h.01"/></svg>
+            <div class="ft">WiFi gratuito</div><div class="fd">Red del hotel · clave en recepción</div>
+          </div>
+          <div class="f">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 20v-6a8 8 0 0116 0v6M4 20h16M9 14h6"/></svg>
+            <div class="ft">Rooftop “The Top”</div><div class="fd">Vistas a la Catedral y al puerto</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PRÁCTICO ============ -->
+      <section class="view" id="view-practico">
+        <div class="vhead">
+          <div class="eyebrow">Lo que necesitas saber</div>
+          <h2>Práctico</h2>
+          <p>Accesos, horarios clave y todo lo útil para moverte por el Summit.</p>
+        </div>
+
+        <div class="info-list">
+          <div class="irow">
+            <div class="ic" style="background:linear-gradient(135deg,#0091df,#16bdf2)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M2 12a10 10 0 0010 10M2 12A10 10 0 0112 2m10 10a10 10 0 01-10 10m10-10A10 10 0 0012 2m0 0c2.5 2.7 4 6.3 4 10s-1.5 7.3-4 10c-2.5-2.7-4-6.3-4-10s1.5-7.3 4-10z"/></svg>
+            </div>
+            <div class="it">
+              <h4>Cómo llegar</h4>
+              <p><b>Aeropuerto AGP</b> a ~15 min en taxi/coche · <b>Tren</b> a María Zambrano (Cercanías + alta velocidad), a ~20 min andando o 5 min en taxi · <b>Coche:</b> parking privado en el hotel.</p>
+            </div>
+          </div>
+
+          <div class="irow">
+            <div class="ic" style="background:linear-gradient(135deg,#00cbb6,#3fb918)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <div class="it">
+              <h4>Momentos clave</h4>
+              <div class="key-times">
+                <div class="kt"><span>Cena OncoFarma · viernes</span><b>21:00</b></div>
+                <div class="kt"><span>Coffee break · sábado</span><b>11:15</b></div>
+                <div class="kt"><span>Cierre y comida · sábado</span><b>13:45</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="irow">
+            <div class="ic" style="background:linear-gradient(135deg,#3aa0ff,#7c8cff)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13a10 10 0 0114 0M8.5 16.5a5 5 0 017 0M12 20h.01"/></svg>
+            </div>
+            <div class="it">
+              <h4>Conexión</h4>
+              <p>WiFi gratuito en todo el hotel. Pide la red y la clave en <b>recepción</b> al llegar.</p>
+            </div>
+          </div>
+
+          <div class="irow">
+            <div class="ic" style="background:linear-gradient(135deg,#16bdf2,#00cbb6)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </div>
+            <div class="it">
+              <h4>Alrededores</h4>
+              <p>Catedral de Málaga, Calle Larios, Museo Picasso, Alcazaba y el Paseo del Muelle Uno, todo a pocos minutos a pie.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          <div class="org">
+            <svg class="bayer" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="4.5" opacity=".75"/><g font-family="-apple-system,Helvetica,Arial,sans-serif" font-weight="800" font-size="17" fill="currentColor" text-anchor="middle"><text x="50" y="22" dominant-baseline="central">B</text><text x="50" y="36" dominant-baseline="central">A</text><text x="50" y="50" dominant-baseline="central">Y</text><text x="50" y="64" dominant-baseline="central">E</text><text x="50" y="78" dominant-baseline="central">R</text><text x="22" y="50" dominant-baseline="central">B</text><text x="36" y="50" dominant-baseline="central">A</text><text x="64" y="50" dominant-baseline="central">E</text><text x="78" y="50" dominant-baseline="central">R</text></g></svg>
+            Un evento de Bayer
+          </div>
+          <small>OncoFarma Summit · Málaga 2026 — Farmacéuticos Oncológicos para Farmacéuticos Oncológicos</small>
+        </div>
+      </section>
+    </main>
+
+    <!-- TAB BAR -->
+    <nav class="tabbar" role="tablist">
+      <button class="tab on" data-view="agenda">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><span>Agenda</span>
+      </button>
+      <button class="tab" data-view="ponentes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0111 0M16 6a3 3 0 010 6M20.5 19a5 5 0 00-4-4.9"/></svg><span>Ponentes</span>
+      </button>
+      <button class="tab" data-view="sede">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 21s-7-5.2-7-11a7 7 0 1114 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Sede</span>
+      </button>
+      <button class="tab" data-view="practico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></svg><span>Práctico</span>
+      </button>
+    </nav>
+  </div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- Datos ----------
+  const PAL = ["#0091df","#00cbb6","#3fb918","#3aa0ff","#16bdf2","#6a86f0","#0aa6c2","#5bbf2e","#0079c2","#22b9a6"];
+  function color(i){return PAL[i % PAL.length];}
+  function initials(name){
+    const c = name.replace(/^Dr\.?\s+/i,"").trim().split(/\s+/);
+    return ((c[0]||"")[0]||"") + ((c[1]||"")[0]||"");
+  }
+
+  // Ponentes (orden de aparición)
+  const SPEAKERS = [
+    {n:"Fernando Gutiérrez", r:"Jefe de Servicio de Farmacia Hospitalaria", o:"CHUC · Director de Investigación SEFH"},
+    {n:"Néstor Guerra", r:"Experto en IA, tecnología e innovación", o:"NCompany"},
+    {n:"Manuel Touris", r:"Farmacéutico", o:"CHUS · Santiago de Compostela"},
+    {n:"Juan Martínez", r:"Abogado · derecho farmacéutico", o:"Faus Moliner"},
+    {n:"Javier Álvarez", r:"Farmacéutico", o:"Hospital U. La Paz · Madrid"},
+    {n:"Dr. Jorge Pedregosa", r:"Oncólogo Médico", o:"Hospital U. La Paz · Madrid"},
+    {n:"Dr. Fernando López", r:"Oncólogo Radioterápico", o:"Hospital U. Ramón y Cajal · Madrid"},
+    {n:"Clara Herranz", r:"Farmacéutica", o:"Hospital U. La Paz · Madrid"},
+    {n:"Marta Herrero", r:"Farmacéutica", o:"Hospital U. Príncipe de Asturias · Alcalá de Henares"},
+    {n:"Rocío Tamayo", r:"Farmacéutica", o:"Hospital Regional U. de Málaga"},
+    {n:"Manuel Francisco Pérez", r:"Farmacéutico", o:"Hospital U. Son Espases · Palma de Mallorca"},
+    {n:"José María Morera", r:"Market Access & Foundational Portfolio Head Iberia", o:"Bayer"},
+    {n:"Verónica Carrillo", r:"Servicio de Farmacia", o:"Servicios Centrales IB-Salut"}
+  ];
+  const spkIndex = {};
+  SPEAKERS.forEach((s,i)=>{ s.i=i; s.av=initials(s.n); s.col=color(i); spkIndex[s.n]=s; });
+
+  // Sesiones
+  function D(str){const[d,t]=str.split("T");const[y,mo,da]=d.split("-").map(Number);const[h,mi]=t.split(":").map(Number);return new Date(y,mo-1,da,h,mi,0,0);}
+  const S = (id,day,a,b,kind,title,who)=>({id,day,start:D(a),end:D(b),kind,title,who:who||[]});
+
+  const SESSIONS = [
+    S("s1",1,"2026-06-12T19:30","2026-06-12T19:45","opening","Bienvenidos al OncoFarma Summit"),
+    S("s2",1,"2026-06-12T19:45","2026-06-12T20:15","talk","El ADN de la Farmacia Hospitalaria: genética aplicada",["Fernando Gutiérrez"]),
+    S("s3",1,"2026-06-12T20:15","2026-06-12T21:00","talk","Inteligencia Artificial generativa en la Farmacia Hospitalaria",["Néstor Guerra"]),
+    S("s4",1,"2026-06-12T21:00","2026-06-12T23:00","social","Cena OncoFarma Summit 2026"),
+
+    S("s5",2,"2026-06-13T09:15","2026-06-13T10:15","talk","Abordajes legales en la casuística del día a día",["Manuel Touris","Juan Martínez"]),
+    S("s6",2,"2026-06-13T10:15","2026-06-13T11:15","talk","Controversias en el Cáncer de Próstata",["Javier Álvarez","Dr. Jorge Pedregosa","Dr. Fernando López","Clara Herranz","Marta Herrero"]),
+    S("s7",2,"2026-06-13T11:15","2026-06-13T11:45","break","Coffee Break"),
+    S("s8",2,"2026-06-13T11:45","2026-06-13T12:45","talk","Casos reales, decisiones reales: de ahí al algoritmo",["Rocío Tamayo","Manuel Touris","Javier Álvarez","Manuel Francisco Pérez"]),
+    S("s9",2,"2026-06-13T12:45","2026-06-13T13:45","talk","Acceso a fármacos oncológicos: ¿dónde estamos realmente?",["José María Morera","Verónica Carrillo","Manuel Francisco Pérez"]),
+    S("s10",2,"2026-06-13T13:45","2026-06-13T14:00","meal","Cierre del evento y comida")
+  ];
+
+  const KIND_LABEL = {opening:"Apertura",talk:"Ponencia",break:"Pausa",meal:"Cierre",social:"Networking"};
+
+  // ---------- Utilidades ----------
+  const $ = s=>document.querySelector(s);
+  const pad = n=>String(n).padStart(2,"0");
+  const hhmm = d=>pad(d.getHours())+":"+pad(d.getMinutes());
+  const DAYNAME = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+  const cap = s=>s.charAt(0).toUpperCase()+s.slice(1);
+
+  function liveAndNext(now){
+    const live = SESSIONS.find(s=>now>=s.start && now<s.end) || null;
+    const next = SESSIONS.filter(s=>s.start>now).sort((a,b)=>a.start-b.start)[0] || null;
+    return {live,next};
+  }
+
+  function relTime(target, now){
+    let ms = target - now;
+    if(ms<0) ms=0;
+    const min = Math.round(ms/60000);
+    if(min < 60) return "en "+min+" min";
+    const h = Math.floor(min/60), m = min%60;
+    const sameDay = target.toDateString()===now.toDateString();
+    if(sameDay && h<12) return "en "+h+" h"+(m?" "+m+" min":"");
+    const dn = cap(DAYNAME[target.getDay()]);
+    const tomorrow = (target - now) < 36*3600000 && !sameDay;
+    return (tomorrow?"mañana":dn)+" · "+hhmm(target);
+  }
+
+  // ---------- Render agenda ----------
+  let currentDay = 1;
+
+  function renderDay(day){
+    currentDay = day;
+    document.querySelectorAll("#seg button").forEach(b=>b.classList.toggle("on", +b.dataset.day===day));
+    const list = SESSIONS.filter(s=>s.day===day);
+    const dayDate = list[0].start;
+    $("#dayTitle").textContent = cap(DAYNAME[dayDate.getDay()])+" "+dayDate.getDate();
+    const talks = list.filter(s=>s.kind==="talk"||s.kind==="opening").length;
+    $("#dayCount").textContent = list.length+" bloques · "+talks+" ponencias";
+
+    const now = new Date();
+    const {live,next} = liveAndNext(now);
+
+    const tl = $("#timeline");
+    tl.innerHTML = "";
+    list.forEach(s=>{
+      const past = now>=s.end;
+      const isLive = live && live.id===s.id;
+      const isNext = !live && next && next.id===s.id;
+
+      const el = document.createElement("article");
+      el.className = "ses"+(past?" past":"")+(isLive?" live":"")+(isNext?" next":"");
+      el.dataset.kind = s.kind;
+      el.id = "card-"+s.id;
+
+      const who = s.who.map(name=>{
+        const sp = spkIndex[name];
+        const av = sp ? sp.av : initials(name);
+        const col = sp ? sp.col : "#0091df";
+        const role = sp ? sp.r : "";
+        return `<div class="p"><span class="av" style="background:${col}">${av}</span>
+                  <span><b>${name}</b>${role?` · <em>${role}</em>`:""}</span></div>`;
+      }).join("");
+
+      el.innerHTML = `
+        <div class="time">${hhmm(s.start)}<span class="end">${hhmm(s.end)}</span></div>
+        <span class="node"></span>
+        <div class="badge"><i></i>${isLive?"En directo":"Próxima"}</div>
+        <div class="kind">${KIND_LABEL[s.kind]||""}</div>
+        <h3>${s.title}</h3>
+        ${who?`<div class="who">${who}</div>`:""}
+        <div class="miniprog"><i style="width:0%"></i></div>`;
+      tl.appendChild(el);
+    });
+    tickProgress();
+  }
+
+  // ---------- Banner contextual ----------
+  function renderNow(){
+    const now = new Date();
+    const {live,next} = liveAndNext(now);
+    const bar = $("#nowbar"), tag=$("#nowTag"), ttl=$("#nowTitle"), when=$("#nowWhen"), pw=$("#nowProgWrap");
+
+    if(live){
+      bar.classList.add("live");
+      tag.textContent = "En directo · ahora";
+      ttl.textContent = live.title;
+      when.innerHTML = "Termina a las <b>"+hhmm(live.end)+"</b>";
+      pw.style.display="block";
+    } else if(next){
+      bar.classList.remove("live");
+      tag.textContent = "Próxima sesión";
+      ttl.textContent = next.title;
+      const dn = cap(DAYNAME[next.start.getDay()]);
+      when.innerHTML = "Empieza <b>"+relTime(next.start, now)+"</b>";
+      pw.style.display="none";
+    } else {
+      bar.classList.remove("live");
+      tag.textContent = "Evento finalizado";
+      ttl.textContent = "¡Gracias por venir al OncoFarma Summit!";
+      when.innerHTML = "Nos vemos en la próxima edición.";
+      pw.style.display="none";
+    }
+  }
+
+  function tickProgress(){
+    const now = new Date();
+    const {live} = liveAndNext(now);
+    // banner
+    if(live){
+      const p = Math.max(0,Math.min(100,(now-live.start)/(live.end-live.start)*100));
+      const bp = $("#nowProg"); if(bp) bp.style.width = p+"%";
+    }
+    // tarjeta live visible
+    const card = live ? document.querySelector("#card-"+live.id+" .miniprog>i") : null;
+    if(card){
+      const p = Math.max(0,Math.min(100,(now-live.start)/(live.end-live.start)*100));
+      card.style.width = p+"%";
+    }
+  }
+
+  // ---------- Ponentes ----------
+  function renderSpeakers(){
+    const wrap = $("#speakers");
+    wrap.innerHTML = SPEAKERS.map(s=>{
+      const ses = SESSIONS.filter(x=>x.who.includes(s.n));
+      const tags = ses.map(x=>`<span>${hhmm(x.start)} · ${x.title.length>30?x.title.slice(0,29)+"…":x.title}</span>`).join("");
+      return `<div class="spk">
+        <div class="av" style="background:${s.col}">${s.av}</div>
+        <div class="info">
+          <div class="nm">${s.n}</div>
+          <div class="ro">${s.r}</div>
+          <div class="or">${s.o}</div>
+          ${tags?`<div class="tags">${tags}</div>`:""}
+        </div></div>`;
+    }).join("");
+  }
+
+  // ---------- Reloj ----------
+  function tickClock(){
+    const now = new Date();
+    $("#clockT").textContent = hhmm(now);
+    $("#clockD").textContent = DAYNAME[now.getDay()].slice(0,3)+" "+now.getDate()+" "+["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"][now.getMonth()];
+    const {live} = liveAndNext(now);
+    $("#clock").classList.toggle("is-live", !!live);
+  }
+
+  // ---------- Navegación ----------
+  function showView(name){
+    document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active", v.id==="view-"+name));
+    document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("on", t.dataset.view===name));
+    window.scrollTo({top:0,behavior:"smooth"});
+  }
+  document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>showView(t.dataset.view)));
+  document.querySelectorAll("#seg button").forEach(b=>b.addEventListener("click",()=>renderDay(+b.dataset.day)));
+
+  // ---------- Arranque ----------
+  function autoDay(){
+    const now = new Date();
+    const {live,next} = liveAndNext(now);
+    if(live) return live.day;
+    if(next) return next.day;
+    return 2; // evento terminado → último día
+  }
+
+  function refreshAll(){ renderNow(); renderDay(currentDay); }
+
+  renderSpeakers();
+  tickClock();
+  renderNow();
+  renderDay(autoDay());
+
+  // scroll suave a la sesión live/próxima al cargar
+  setTimeout(()=>{
+    const now = new Date();
+    const {live,next} = liveAndNext(now);
+    const target = live || next;
+    if(target && target.day===currentDay){
+      const el = document.getElementById("card-"+target.id);
+      if(el) el.scrollIntoView({behavior:"smooth",block:"center"});
+    }
+  }, 650);
+
+  setInterval(tickClock, 15000);
+  setInterval(tickProgress, 5000);
+  setInterval(refreshAll, 45000);
+  document.addEventListener("visibilitychange",()=>{ if(!document.hidden){ tickClock(); refreshAll(); }});
+})();
+</script>
+<script>
+  /* Service worker: la app funciona offline una vez visitada. Si falla, la app sigue operativa. */
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("./service-worker.js").catch(function (e) {
+        console.warn("SW no registrado:", e);
+      });
+    });
+  }
+</script>
+</body>
+</html>
